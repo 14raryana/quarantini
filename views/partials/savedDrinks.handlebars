@@ -20,7 +20,8 @@
   {{#each savedDrinks}}
  
  <div class="jumbotron jumbo3-saved" style="padding-bottom:10%;">
-    <button type="button" class="removebtn">x</button>
+   <i id="{{this.id}}" class="fas fa-trash-alt trashCanBtn removebtn"></i>
+    {{!-- <button type="button" id="{{this.id}}" class="removebtn"><i id="{{this.id}}" class="fas fa-trash-alt"></i></button> --}}
     <h3 class="subheader-details">{{this.name}}</h3>
     <div class="row">
     <div class="col-md-7">

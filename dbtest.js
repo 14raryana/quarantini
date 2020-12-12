@@ -78,6 +78,29 @@ class DB {
             }
         });
     }
+    
+
+    async deleteDrink(drinkId) {
+        console.log(drinkId);
+        console.log("THIS IS THE DRINKOBJ IN DBTEST")
+        const query = "DELETE FROM savedDrinks WHERE apiDrinkId = ?;";
+        connection.query(query, [drinkId], function(err, results) {
+            console.log(results);
+        });
+    }
+
+    async checkIfDrinkExists(drinkId) {
+        return new Promise(function(resolve, reject) {
+            const query = "SELECT COUNT(apiDrinkId) AS apiDrinkId FROM savedDrinks WHERE apiDrinkId = ?;";
+            return connection.query(query, [drinkId], function(err, results) {
+                // console.log(results[0].apiDrinkId);
+                resolve(results[0]);
+            });
+        })
+        // console.log(drinkId);
+        // console.log("THIS IS THE DRINKID IN DBTEST")
+
+    }
 
 
 }

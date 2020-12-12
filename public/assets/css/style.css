@@ -50,7 +50,7 @@ html{
   box-shadow: 2px 2px 4px black;
   border-radius: 3px;
   margin: 8px;
-  margin-top: 15px;
+  margin-top: 5%;
   text-align: center;
   width: 90%;
 
@@ -80,6 +80,7 @@ html{
   display:inline-block!important;
   padding-right: 25px!important;
   padding-left: 25px!important;
+  padding-top: 10px!important;
   margin-top: 15px!important;
   margin: 3%;
 
@@ -229,7 +230,7 @@ b{color:white;}
   background: radial-gradient(rgb(40, 121, 117),rgb(71, 209, 101),rgb(40, 121, 117))!important;
   box-shadow: 2px 2px 4px black;
   width:600px;
-  height:600px;
+  height:90%;
   padding-top: 20px!important;
   margin: 10px;
 }
@@ -283,6 +284,10 @@ b{color:white;}
   float: right!important;
 }
 
+.removebtn:hover{
+  cursor: pointer;
+}
+
 
 .color-white {
   color:white;
@@ -317,10 +322,12 @@ b{color:white;}
 
 .saveBtn{
   box-shadow: 2px 2px 4px black;
+  /* margin-top: auto!important;
+  margin-bottom: auto!important; */
 }
 
 .saveBtn:active{
-  /* background-color: red !important;   */
+  background-color: red !important;  
 }
 
 .jumbo2-saved {
@@ -334,3 +341,31 @@ justify-content: center;
   grid-template-columns: auto auto;
   justify-content: center;
 }
+
+.trashCanBtn{
+  height: auto!important;
+  width: auto!important;
+  background-color: transparent!important;
+  border-color: none!important;
+  color: black!important;
+
+  box-shadow: none!important;
+  float: right!important;
+  /* background-color: red; */
+  font-size: 1.5em!important;
+}
+
+.trashCanBtn:hover{
+  cursor: pointer!important;
+  box-shadow: 3px 3px black!important;
+}
+
+/* height: 30px!important;
+
+width: 30px!important;
+background-color: rgb(71, 209, 101)!important;
+border-color:  rgb(71, 209, 101)!important;
+color:white;
+margin: 0 auto!important;
+float: right!important;
+cursor: pointer; */

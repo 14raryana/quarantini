@@ -95,13 +95,20 @@ router.get("/top5", function(req, res) {
     .then(function(drinkIds) {
       console.log(drinkIds);
           apiCall.filterByDrinkId(drinkIds).then(function(savedDrinkDetails) {
-            console.log({savedDrinkDetails});
-            savedDrinkDetails.top5 = false;
-            res.status(200).render("index",{savedDrinkDetails}, function(err, html) {
-              console.log(html);
-              savedDrinksHtml = html;
-              res.render("index",{savedDrinkDetails})
-            });
+            if(savedDrinkDetails.length <= 0) {
+              res.render("index", {noResults: true})
+            }
+            else {
+              console.log(savedDrinkDetails.length);
+              console.log({savedDrinkDetails});
+              savedDrinkDetails.top5 = false;
+              res.status(200).render("index",{savedDrinkDetails}, function(err, html) {
+                console.log(html);
+                savedDrinksHtml = html;
+                res.render("index",{savedDrinkDetails})
+              });
+            }
+
           });
     });
   });
@@ -181,6 +188,14 @@ router.get("/top5", function(req, res) {
       // console.log({drinkDetails});
       res.render("index", {drinkDetails})
     });
+  });
+
+  router.post("/api/drinks/delete", function(req, res) {
+    console.log(req.body.drinkId);
+    console.log("THIS IS THE REQ.BODY");
+    db.deleteDrink(req.body.drinkId).then(function() {
+      res.render("");
+    })
   });
 
 

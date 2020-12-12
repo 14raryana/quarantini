@@ -26,6 +26,8 @@ $(function () {
         drinkId: this.id
       },
       success: function (result) {
+        console.log(result);
+        console.log("the result of the success");
         $(`#${saveBtn}`).html("Save for Later")
         $(`#${saveBtn}`).attr("style","background-color:  rgb(71, 209, 101)!important");
       },
@@ -234,6 +236,47 @@ $(function () {
       },
       success: function (result) {
         window.location.href = link;
+      },
+      error: function (result) {
+        alert('error');
+      }
+    });
+  });
+});
+
+// $(function () {
+//   $(".removebtn").on("click", function (e) {
+//     alert(this.id);
+//     // var drinkName = e.target.id;
+//     e.preventDefault();
+//     const link = `/api/drinks/delete`;
+//     $.ajax({
+//       type: "POST",
+//       url: link,
+//       data: {
+//         drinkId: e.target.id
+//       },
+//       success: function (result) {
+//         window.location.href = link;
+//       },
+//       error: function (result) {
+//         alert('error');
+//       }
+//     });
+//   });
+// });
+$(function () {
+  $(".removebtn").on("click", function (e) {  
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/api/drinks/delete",
+      data: {
+        drinkId: this.id
+      },
+      success: function (result) {
+        // console.log("AHHHHH YAAAAA!!!!")
+        window.location.reload();
       },
       error: function (result) {
         alert('error');
