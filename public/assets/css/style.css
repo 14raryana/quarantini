@@ -302,6 +302,12 @@ b{color:white;}
   float: none!important;
   border-color: white!important;
   background-image:linear-gradient(to right, rgb(6, 33, 54),rgb(19, 99, 160),rgb(6, 33, 54));
+  color: white;
+}
+
+#inputEmail::placeholder{
+  color: white;
+  opacity: 0.9;
 }
 
 .email-input {
@@ -311,6 +317,10 @@ b{color:white;}
 
 .saveBtn{
   box-shadow: 2px 2px 4px black;
+}
+
+.saveBtn:active{
+  /* background-color: red !important;   */
 }
 
 .jumbo2-saved {

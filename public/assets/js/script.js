@@ -14,7 +14,10 @@ $(function () {
 
 
 $(function () {
-  $(".saveBtn").on("click", function (e) {
+  $(".saveBtn").on("click", function (e) {        
+    var saveBtn = this.id;
+    $(`#${saveBtn}`).attr("style","background-color: red !important");
+    $(`#${saveBtn}`).html("Drink Saved!")
     e.preventDefault();
     $.ajax({
       type: "POST",
@@ -23,6 +26,8 @@ $(function () {
         drinkId: this.id
       },
       success: function (result) {
+        $(`#${saveBtn}`).html("Save for Later")
+        $(`#${saveBtn}`).attr("style","background-color:  rgb(71, 209, 101)!important");
       },
       error: function (result) {
         alert('error');
@@ -217,7 +222,7 @@ $(function () {
 
 $(function () {
   $(".drinkDetailsLink").on("click", function (e) {
-    alert(e.target.id);
+    // alert(e.target.id);
     var drinkName = e.target.id;
     e.preventDefault();
     const link = `/search/drinkDetails/${drinkName}`;
@@ -236,6 +241,8 @@ $(function () {
     });
   });
 });
+
+
 
 
 
