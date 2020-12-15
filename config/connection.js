@@ -18,8 +18,8 @@ else {
   connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "hacktheplanet",
-    database: "todoagain_db"
+    password: "rootroot",
+    database: "cocktails_db"
   });
 }
 
